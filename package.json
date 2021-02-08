@@ -1,0 +1,24 @@
+{
+  "name": "missing_animal_server_refactoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHO-cmd/Missing_Animal_Server_Refactoring.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHO-cmd/Missing_Animal_Server_Refactoring/issues"
+  },
+  "homepage": "https://github.com/CHO-cmd/Missing_Animal_Server_Refactoring#readme",
+  "prettier": { "printWidth": 80, "useTabs": false, "tabWidth": 2, "bracketSpacing": true, "semi": true, "singleQuote": false }
+}
