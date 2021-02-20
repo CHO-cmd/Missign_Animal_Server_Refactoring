@@ -3,6 +3,7 @@ import cors = require("cors");
 import session = require("express-session");
 import cookieParser = require("cookie-parser");
 import logger = require("morgan");
+import "reflect-metadata";
 
 const app = express();
 
