@@ -5,6 +5,8 @@ import cookieParser = require("cookie-parser");
 import logger = require("morgan");
 import "reflect-metadata";
 
+import authRouter = require("./routes/auth");
+
 const app = express();
 
 app.set("port", process.env.PORT || 8080);
