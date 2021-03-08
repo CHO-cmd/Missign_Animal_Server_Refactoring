@@ -6,6 +6,7 @@ import logger = require("morgan");
 import "reflect-metadata";
 
 import authRouter = require("./routes/auth");
+import commentRouter = require("./routes/comments");
 
 const app = express();
 
