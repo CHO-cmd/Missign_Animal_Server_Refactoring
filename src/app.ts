@@ -8,6 +8,7 @@ import "reflect-metadata";
 import authRouter = require("./routes/auth");
 import commentRouter = require("./routes/comments");
 import mapinfoRouter = require("./routes/mapinfo");
+import petsRouter = require("./routes/pets");
 
 const app = express();
 
