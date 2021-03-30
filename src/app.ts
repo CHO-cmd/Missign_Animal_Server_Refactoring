@@ -1,26 +1,28 @@
-import express = require("express");
-import cors = require("cors");
-import session = require("express-session");
-import cookieParser = require("cookie-parser");
-import logger = require("morgan");
-import "reflect-metadata";
+import express = require('express');
+import cors = require('cors');
+import session = require('express-session');
+import cookieParser = require('cookie-parser');
+import logger = require('morgan');
+import * as dotenv from 'dotenv';
+dotenv.config();
+// import "reflect-metadata";
 
-import authRouter = require("./routes/auth");
-import commentRouter = require("./routes/comments");
-import mapinfoRouter = require("./routes/mapinfo");
-import petsRouter = require("./routes/pets");
-import usersRouter = require("./routes/users");
+import authRouter = require('./routes/auth');
+import commentRouter = require('./routes/comments');
+import mapinfoRouter = require('./routes/mapinfo');
+import petsRouter = require('./routes/pets');
+import usersRouter = require('./routes/users');
 
 const app = express();
 
-app.set("port", process.env.PORT || 8080);
-app.use(logger("combined"));
+app.set('port', process.env.PORT || 8080);
+app.use(logger('combined'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    methods: ["OPTIONS", "GET", "POST", "PUT", "DELETE"],
+    origin: 'http://localhost:3000',
+    methods: ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
 );
@@ -29,17 +31,16 @@ app.use(
   session({
     resave: false,
     saveUninitialized: true,
-    secret: "process.env.COOKIE_SECRET",
+    secret: process.env.COOKIE_SECRET || '',
     cookie: {
       httpOnly: true,
       secure: true,
-      sameSite: "none",
+      sameSite: 'none',
       maxAge: 1000 * 60 * 60 * 24 * 7,
     },
   })
 );
 
-app.listen(app.get("port"), () => {
+app.listen(app.get('port'), () => {
   console.log('start server successfully');
 });
-
